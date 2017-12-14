@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 2.4.0
 script: bundle exec rake spec || ( cat ext/rocksdb/mkmf.log && /bin/false )
+group: deprecated-2017Q4
 
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
