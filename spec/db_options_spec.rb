@@ -4,7 +4,7 @@ require "rocksdb"
 
 describe RocksDB do
   before do
-    @rocksdb = RocksDB::DB.new "/tmp/file3", {:max_bytes_for_level_base => 10485760, :max_grandparent_overlap_factor => 20}
+    @rocksdb = RocksDB::DB.new "/tmp/file3", {:max_bytes_for_level_base => 10485760, :max_grandparent_overlap_factor => 20, :prepare_for_bulk_load => true}
   end
 
   it 'should get data' do

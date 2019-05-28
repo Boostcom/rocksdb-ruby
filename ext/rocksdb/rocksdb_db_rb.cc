@@ -28,6 +28,10 @@ extern "C" {
       if(v == Qtrue){
         readonly = true;
       }
+      v = rb_hash_aref(v_options, ID2SYM(rb_intern("prepare_for_bulk_load")));
+      if(v == true){
+        options.PrepareForBulkLoad();
+      }
       set_opt(&options, &v_options);
     }
     //std::cout << options.max_bytes_for_level_base << "\n";
